@@ -6,7 +6,7 @@ import { About }              from '../../views';
 
 const mapStateToProps = (state) => {
   return {
-    currentView:  state.views.currentView
+    currentView: state.getIn(['views', 'currentView'])
   };
 };
 

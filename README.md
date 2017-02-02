@@ -1,21 +1,14 @@
-Full ES2015 React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux-devtools STARTER
+Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux-devtools STARTER
 ==========
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter)
-[![Build Status](https://travis-ci.org/MacKentoch/react-redux-bootstrap-webpack-starter.svg?branch=master)](https://travis-ci.org/MacKentoch/react-redux-bootstrap-webpack-starter)
-[![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-redux-bootstrap-webpack-starter/badge.svg?branch=master)](https://coveralls.io/github/MacKentoch/react-redux-bootstrap-webpack-starter?branch=master)
 
-#### full ES6-ES2015
 
-> My best React + redux project starter.
+> My React + Redux + Immutable + React-Router + Bootstrap + webpack project starter.
 
 - *webpack is as simple as possible*
 - *ReactJS + Redux + React Router all immutable (all component extend PureComponent).*
 - *`pure front-end` = server independant (use whatever you want as server: NodeJS, Rails, .NET...)*
 
-*Concept behind:* same as [react-bootstrap-webpack-starter](https://github.com/MacKentoch/react-bootstrap-webpack-starter) **but added `Redux` and amazing and helpful `redux-devtools`.**
-
-## Breaking changes since v0.5.0
-ReactJS v15.4.x required react-hot-loader to be v3+ (*previous react-hot-loader was v1.x and v1.3.1 came too late*). So This starter had to include breaking changes to follow all of that.
 
 ## Detailed Content
 
@@ -24,9 +17,10 @@ ReactJS v15.4.x required react-hot-loader to be v3+ (*previous react-hot-loader 
 - Redux (*as you application grows managing state will be a serious concern, save pain with Redux*)
 - React-Redux (*Redux is not specific to ReactJS, you could easily use it with Angular2 for instance*)
 - Immutable JS
+- redux-immutable
 - Redux-devtools (*want to time travel your application State?*)
 - React-Router-Redux (*previously named react-simple-router*)
-- react-router (2.x- [github :link:](https://github.com/reactjs/react-router))
+- react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
 - font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
@@ -35,7 +29,6 @@ ReactJS v15.4.x required react-hot-loader to be v3+ (*previous react-hot-loader 
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
 - Webpack ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
-- react-addons-shallow-compare (*pure render mixin equivalent for ES6*)
 - whatwg-fetch (*Why: because it is a fetch `Web API` polyfill*)
 
 **Tool chain:**
@@ -127,7 +120,7 @@ npm run prod-win
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Erwan DATIN
+Copyright (c) 2017 Erwan DATIN
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

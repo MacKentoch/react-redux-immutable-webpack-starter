@@ -1,22 +1,16 @@
 import {
   createStore,
   applyMiddleware,
-  compose,
-  combineReducers
-}                         from 'redux';
-import createLogger       from 'redux-logger';
-import thunkMiddleware    from 'redux-thunk';
-import * as reducers      from '../modules/reducers';
-import { routerReducer }  from 'react-router-redux';
-
-const loggerMiddleware = createLogger({
-  level     : 'info',
-  collapsed : true
-});
+  compose
+}                           from 'redux';
+import thunkMiddleware      from 'redux-thunk';
+import * as reducers        from '../modules/reducers';
+import routerReducer        from './immutableRouteReducer';
+import { combineReducers }  from 'redux-immutable';
 
 // createStore : enhancer
 const enhancer = compose(
-  applyMiddleware(thunkMiddleware, loggerMiddleware) // logger after thunk to avoid undefined actions
+  applyMiddleware(thunkMiddleware)
 );
 
 // combine reducers

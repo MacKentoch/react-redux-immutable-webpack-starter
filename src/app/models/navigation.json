@@ -1,17 +1,11 @@
 {
-  "brand":      "React Redux Bootstrap Starter",
+  "brand":      "React Redux Immutable Starter",
   "leftLinks":  [],
   "rightLinks": [
     {
       "label":      "Home",
       "link":       "/",
       "view":       "home",
-      "isRouteBtn": true
-    },
-    {
-      "label":      "Components",
-      "link":       "/components",
-      "view":       "components",
       "isRouteBtn": true
     },
     {

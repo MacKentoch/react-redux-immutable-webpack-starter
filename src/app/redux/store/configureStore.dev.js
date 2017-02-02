@@ -1,7 +1,7 @@
 import {
   createStore,
   compose,
-  // combineReducers, // cannot deal with immutable
+  // combineReducers,
   applyMiddleware
 }                               from 'redux';
 // import { routerReducer }        from 'react-router-redux';

@@ -28,8 +28,6 @@ class App extends Component {
           handleLeftNavItemClick={this.handleLeftNavItemClick}
           handleRightNavItemClick={this.handleRightNavItemClick}
         />
-      <h1>
-      </h1>
         <div className="container-fluid">
           {children}
         </div>
@@ -60,11 +58,10 @@ App.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    currentView:  state
+    currentView: state.getIn(['views', 'currentView'])
   };
 };
 
-// "bindActionCreators" use-case is to pass dispatch to "store non aware children components" (but I feel like it is a good habbit to use it everytime)
 const mapDispatchToProps = (dispatch) => {
   return {
     actions : bindActionCreators(

@@ -6,13 +6,19 @@ import React, {
 import {
   Router,
   // hashHistory,
+  // useRouterHistory,
   browserHistory
 }                               from 'react-router';
 import { Provider }             from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { fromJS }               from 'immutable';
 import configureStore           from './redux/store/configureStore';
 import DevTools                 from './redux/devTools/DevTools.jsx';
+// import { createHistory }        from 'history';
+
+// specified base url:
+// const browserHistory  = useRouterHistory(createHistory)({
+//   basename: '/app'
+// });
 
 const store         = configureStore();
 const syncedHistory = syncHistoryWithStore(browserHistory, store, {
