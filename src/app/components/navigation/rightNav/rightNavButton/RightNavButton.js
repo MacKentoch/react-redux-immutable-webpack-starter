@@ -1,16 +1,10 @@
 import React, {
-  Component,
+  PureComponent,
   PropTypes
 }                     from 'react';
 import { Link }       from 'react-router';
-import shallowCompare from 'react-addons-shallow-compare';
 
-class RightNavButton extends Component {
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
-  }
-
+class RightNavButton extends PureComponent {
   render() {
     const { link, label } = this.props;
     return (

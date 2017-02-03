@@ -1,36 +1,38 @@
-import React, { PropTypes } from 'react';
+import React, {
+  PureComponent,
+  PropTypes
+}                           from 'react';
 import LeftNavButton        from './leftNavButton/LeftNavButton';
+import Immutable            from 'immutable';
 
-const LeftNav = ({ leftLinks, onLeftNavButtonClick }) => {
-  return (
-    <ul className="nav navbar-nav">
-      {
-        leftLinks.map(
-          (aLinkBtn, index) => {
-            return (
-              <LeftNavButton
-                key={index}
-                link={aLinkBtn.link}
-                label={aLinkBtn.label}
-                viewName={aLinkBtn.view}
-                onClick={onLeftNavButtonClick}
-              />
-            );
-          }
-        )
-      }
-    </ul>
-  );
-};
+
+class LeftNav extends PureComponent {
+  render() {
+    const { leftLinks, onLeftNavButtonClick } = this.props;
+    return (
+      <ul className="nav navbar-nav">
+        {
+          leftLinks.map(
+            (aLinkBtn, index) => {
+              return (
+                <LeftNavButton
+                  key={index}
+                  link={aLinkBtn.get('link')}
+                  label={aLinkBtn.get('label')}
+                  viewName={aLinkBtn.get('view')}
+                  onClick={onLeftNavButtonClick}
+                />
+              );
+            }
+          )
+        }
+      </ul>
+    );
+  }
+}
 
 LeftNav.propTypes = {
-  leftLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: PropTypes.string,
-      label: PropTypes.string,
-      viewName: PropTypes.string
-    })
-  ),
+  leftLinks: PropTypes.instanceOf(Immutable.List),
   onLeftNavButtonClick: PropTypes.func
 };
 

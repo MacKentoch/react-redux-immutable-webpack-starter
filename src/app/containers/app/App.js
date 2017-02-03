@@ -1,5 +1,5 @@
 import React, {
-  Component,
+  PureComponent,
   PropTypes
 }                             from 'react';
 import {
@@ -10,11 +10,11 @@ import navigationModel        from '../../models/navigation.json';
 import { bindActionCreators } from 'redux';
 import { connect }            from 'react-redux';
 import * as viewsActions      from '../../redux/modules/views';
+import { fromJS }             from 'immutable';
 
-class App extends Component {
-
+class App extends PureComponent {
   state = {
-    navModel : navigationModel
+    navModel : fromJS(navigationModel)
   };
 
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div id="appContainer">
         <NavigationBar
-          brand={navModel.brand}
+          brand={navModel.get('brand')}
           navModel={navModel}
           handleLeftNavItemClick={this.handleLeftNavItemClick}
           handleRightNavItemClick={this.handleRightNavItemClick}
@@ -50,10 +50,13 @@ class App extends Component {
 
 // statics :
 App.propTypes = {
+  // react router
   children:   PropTypes.node,
   history:    PropTypes.object,
   location:   PropTypes.object,
-  actions:    PropTypes.object
+  actions:    PropTypes.object,
+  // views:
+  currentView: PropTypes.string
 };
 
 const mapStateToProps = (state) => {

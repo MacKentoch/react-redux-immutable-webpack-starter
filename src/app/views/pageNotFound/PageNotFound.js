@@ -1,15 +1,9 @@
 import React, {
-  Component
+  PureComponent
 }                     from 'react';
-import shallowCompare from 'react-addons-shallow-compare';
 import {Jumbotron}    from '../../components';
 
-class PageNotFound extends Component {
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
-  }
-
+class PageNotFound extends PureComponent {
   render() {
     return(
       <div>

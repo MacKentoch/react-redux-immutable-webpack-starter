@@ -83,6 +83,7 @@
   },
   "dependencies": {
     "animate.css": "3.5.1",
+    "axios": "^0.15.3",
     "babel-polyfill": "^6.16.0",
     "bootstrap": "^3.3.7",
     "classnames": "^2.2.5",
@@ -92,7 +93,6 @@
     "js-base64": "^2.1.9",
     "moment": "^2.17.0",
     "react": "^15.4.1",
-    "react-addons-shallow-compare": "^15.4.1",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
     "react-hot-loader": "^3.0.0-beta.6",

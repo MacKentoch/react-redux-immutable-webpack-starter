@@ -5,9 +5,12 @@ import React, {
 }                               from 'react';
 import {
   Router,
-  // hashHistory,
-  // useRouterHistory,
-  browserHistory
+
+  hashHistory         // <- when no server
+  // browserHistory,  // <- when server
+  
+  // useRouterHistory
+
 }                               from 'react-router';
 import { Provider }             from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -21,7 +24,7 @@ import DevTools                 from './redux/devTools/DevTools.jsx';
 // });
 
 const store         = configureStore();
-const syncedHistory = syncHistoryWithStore(browserHistory, store, {
+const syncedHistory = syncHistoryWithStore(hashHistory, store, {
   selectLocationState(state) {
     return state.get('routing').toJS();
   }

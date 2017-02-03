@@ -1,4 +1,4 @@
-import * as fetchTools from './fetchTools';
+import * as fetchTools from './API/fetchTools';
 import {getSomething} from './API/example';
 
 export {

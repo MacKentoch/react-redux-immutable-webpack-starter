@@ -1,36 +1,38 @@
-import React, { PropTypes } from 'react';
+import React, {
+  PureComponent,
+  PropTypes
+}                           from 'react';
 import RightNavButton       from './rightNavButton/RightNavButton';
+import Immutable            from 'immutable';
 
-const RightNav = ({ rightLinks, onRightNavButtonClick }) => {
-  return (
-    <ul className="nav navbar-nav navbar-right">
-      {
-        rightLinks.map(
-          (aLinkBtn, index) => {
-            return (
-              <RightNavButton
-                key={index}
-                link={aLinkBtn.link}
-                label={aLinkBtn.label}
-                viewName={aLinkBtn.view}
-                onClick={onRightNavButtonClick}
-              />
-            );
-          }
-        )
-      }
-    </ul>
-  );
-};
+
+class RightNav extends PureComponent {
+  render() {
+    const { rightLinks, onRightNavButtonClick } = this.props;
+    return (
+      <ul className="nav navbar-nav navbar-right">
+        {
+          rightLinks.map(
+            (aLinkBtn, index) => {
+              return (
+                <RightNavButton
+                  key={index}
+                  link={aLinkBtn.get('link')}
+                  label={aLinkBtn.get('label')}
+                  viewName={aLinkBtn.get('view')}
+                  onClick={onRightNavButtonClick}
+                />
+              );
+            }
+          )
+        }
+      </ul>
+    );
+  }
+}
 
 RightNav.propTypes = {
-  rightLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      link: PropTypes.string,
-      label: PropTypes.string,
-      viewName: PropTypes.string
-    })
-  ),
+  rightLinks: PropTypes.instanceOf(Immutable.List),
   onRightNavButtonClick: PropTypes.func
 };
 
