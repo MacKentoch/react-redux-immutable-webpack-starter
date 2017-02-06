@@ -5,7 +5,8 @@ import {
 import chai, {expect}     from 'chai';
 import sinon              from 'sinon';
 import dirtyChai          from 'dirty-chai';
-import RightNavButton      from '../../../../../src/app/components/navigation/rightNav/rightNavButton/RightNavButton';
+import RightNavButton     from '../../../../../src/app/components/navigation/rightNav/rightNavButton/RightNavButton';
+import { fromJS }         from 'immutable';
 
 chai.use(dirtyChai);
 
@@ -17,11 +18,11 @@ const viewNameMock = 'view name';
 chai.use(dirtyChai);
 
 describe('<RightNavButton />', () => {
-  const props = {
+  const props = fromJS({
     link: linkMock,
     label: labelMock,
     viewName: viewNameMock
-  };
+  });
 
   it('should render a RightNavButton', () => {
     const wrapper = shallow(<RightNavButton {...props} />);

@@ -5,10 +5,11 @@ import {
 import chai, {expect}     from 'chai';
 import dirtyChai          from 'dirty-chai';
 import RightNav           from '../../../../src/app/components/navigation/rightNav/RightNav';
+import { fromJS, toJS }   from 'immutable';
 
 chai.use(dirtyChai);
 
-const rightLinksMock = [
+const rightLinksMock = fromJS([
   {
     label:      'a right Link',
     link:       'link1',
@@ -21,7 +22,7 @@ const rightLinksMock = [
     view:       'fake2',
     isRouteBtn: true
   }
-];
+]);
 
 // avoid to eslint-disable for chai no-unsued-expressions
 chai.use(dirtyChai);
@@ -58,21 +59,21 @@ describe('<RightNav />', () => {
         const wrapper = shallow(<RightNav {...props} />);
         const RightNavButton = wrapper.find('RightNavButton');
 
-        expect(RightNavButton.first().prop('label')).to.equal(rightLinksMock[0].label);
+        expect(RightNavButton.first().prop('label')).to.equal(rightLinksMock.getIn([0, 'label']));
       });
 
       it('should be passed props link:string set to mock value', () => {
         const wrapper = shallow(<RightNav {...props} />);
         const RightNavButton = wrapper.find('RightNavButton');
 
-        expect(RightNavButton.first().prop('link')).to.equal(rightLinksMock[0].link);
+        expect(RightNavButton.first().prop('link')).to.equal(rightLinksMock.getIn([0, 'link']));
       });
 
       it('should be passed props viewName:string set to mock value', () => {
         const wrapper = shallow(<RightNav {...props} />);
         const RightNavButton = wrapper.find('RightNavButton');
 
-        expect(RightNavButton.first().prop('viewName')).to.equal(rightLinksMock[0].view);
+        expect(RightNavButton.first().prop('viewName')).to.equal(rightLinksMock.getIn([0, 'view']));
       });
 
       it('should be passed props onClick:function to be a function', () => {
@@ -90,21 +91,21 @@ describe('<RightNav />', () => {
         const wrapper = shallow(<RightNav {...props} />);
         const RightNavButton = wrapper.find('RightNavButton');
 
-        expect(RightNavButton.at(secondRightNavButtonIndex).prop('label')).to.equal(rightLinksMock[secondRightNavButtonIndex].label);
+        expect(RightNavButton.at(secondRightNavButtonIndex).prop('label')).to.equal(rightLinksMock.getIn([secondRightNavButtonIndex, 'label']));
       });
 
       it('should be passed props link:string set to mock value', () => {
         const wrapper = shallow(<RightNav {...props} />);
         const RightNavButton = wrapper.find('RightNavButton');
 
-        expect(RightNavButton.at(secondRightNavButtonIndex).prop('link')).to.equal(rightLinksMock[secondRightNavButtonIndex].link);
+        expect(RightNavButton.at(secondRightNavButtonIndex).prop('link')).to.equal(rightLinksMock.getIn([secondRightNavButtonIndex, 'link']));
       });
 
       it('should be passed props viewName:string set to mock value', () => {
         const wrapper = shallow(<RightNav {...props} />);
         const RightNavButton = wrapper.find('RightNavButton');
 
-        expect(RightNavButton.at(secondRightNavButtonIndex).prop('viewName')).to.equal(rightLinksMock[secondRightNavButtonIndex].view);
+        expect(RightNavButton.at(secondRightNavButtonIndex).prop('viewName')).to.equal(rightLinksMock.getIn([secondRightNavButtonIndex, 'view']));
       });
 
       it('should be passed props onClick:function to be a function', () => {

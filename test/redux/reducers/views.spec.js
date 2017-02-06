@@ -1,6 +1,7 @@
 import {expect}             from 'chai';
 import views                from '../../../src/app/redux/modules/views';
 import moment               from 'moment';
+import { fromJS, toJS }     from 'immutable';
 
 const dateFormat = 'DD/MM/YYYY HH:mm';
 
@@ -12,7 +13,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    null
     };
     /* eslint-disable no-undefined */
-    expect(views(undefined, {})).to.deep.equal(initialState);
+    expect(toJS(views(undefined, {}))).to.deep.equal(initialState);
     /* eslint-enable no-undefined */
   });
 
@@ -30,7 +31,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    null
     };
     /* eslint-disable no-undefined */
-    expect(views(undefined, action)).to.deep.equal(expectedState);
+    expect(toJS(views(undefined, action))).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -48,7 +49,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    now
     };
     /* eslint-disable no-undefined */
-    expect(views({currentView: 'home'}, actionLeaveHome)).to.deep.equal(expectedState);
+    expect(toJS(views({currentView: 'home'}, actionLeaveHome))).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -67,7 +68,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    null
     };
     /* eslint-disable no-undefined */
-    expect(views(undefined, action)).to.deep.equal(expectedState);
+    expect(toJS(views(undefined, action))).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -85,7 +86,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    now
     };
     /* eslint-disable no-undefined */
-    expect(views({currentView: 'about'}, actionLeaveAbout)).to.deep.equal(expectedState);
+    expect(toJS(views({currentView: 'about'}, actionLeaveAbout))).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -103,7 +104,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    null
     };
     /* eslint-disable no-undefined */
-    expect(views(undefined, actionEnterComponents)).to.deep.equal(expectedState);
+    expect(toJS(views(undefined, actionEnterComponents))).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -121,7 +122,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    now
     };
     /* eslint-disable no-undefined */
-    expect(views({currentView: 'components'}, actionLeaveComponents)).to.deep.equal(expectedState);
+    expect(toJS(views({currentView: 'components'}, actionLeaveComponents))).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 });

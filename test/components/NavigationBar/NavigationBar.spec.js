@@ -6,10 +6,11 @@ import {
 import chai, {expect}     from 'chai';
 import dirtyChai          from 'dirty-chai';
 import { NavigationBar }  from '../../../src/app/components';
+import { fromJS, toJS }   from 'immutable';
 
 chai.use(dirtyChai);
 
-const navModel = {
+const navModel = fromJS({
   brand:      'React Redux Bootstrap Starter',
   leftLinks:  [
     {
@@ -33,7 +34,7 @@ const navModel = {
       isRouteBtn: true
     }
   ]
-};
+});
 
 // avoid to eslint-disable for chai no-unsued-expressions
 chai.use(dirtyChai);
@@ -62,7 +63,7 @@ describe('<NavigationBar />', () => {
     it('should be passed props leftLinks:array of object with length 1', () => {
       const wrapper = shallow(<NavigationBar {...props} />);
       const LeftNav = wrapper.find('LeftNav');
-      expect(LeftNav.prop('leftLinks').length).to.equal(1);
+      expect(toJS(LeftNav.prop('leftLinks')).length).to.equal(1);
     });
 
     it('should be passed props onLeftNavButtonClick:func', () => {
@@ -76,7 +77,7 @@ describe('<NavigationBar />', () => {
     it('should be passed props rightLinks:array of object with length 2', () => {
       const wrapper = shallow(<NavigationBar {...props} />);
       const RightNav = wrapper.find('RightNav');
-      expect(RightNav.prop('rightLinks').length).to.equal(2);
+      expect(toJS(RightNav.prop('rightLinks')).length).to.equal(2);
     });
 
     it('should be passed props onRightNavButtonClick:func', () => {

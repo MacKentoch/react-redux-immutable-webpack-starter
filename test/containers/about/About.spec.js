@@ -4,13 +4,14 @@ import {shallow}            from 'enzyme';
 import configureMockStore   from 'redux-mock-store';
 import thunk                from 'redux-thunk';
 import AboutConnected       from '../../../src/app/containers/about/About';
+import { fromJS }           from 'immutable';
 
 const mockStore = configureMockStore([ thunk ]);
-const storeStateMock = {
+const storeStateMock = fromJS({
   views: {
     currentView: 'about'
   }
-};
+});
 
 let store;
 let wrapper;
