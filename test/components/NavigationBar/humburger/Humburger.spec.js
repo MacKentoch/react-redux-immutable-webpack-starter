@@ -25,6 +25,6 @@ describe('<Humburger />', () => {
 
   it('should contains "<span className="icon-bar"></span>"', () => {
     const wrapper = shallow(<Humburger />);
-    expect(wrapper.contains(<span className="icon-bar"></span>)).to.equal(true);
+    expect(wrapper.contains(<span className="icon-bar" />)).to.equal(true);
   });
 });

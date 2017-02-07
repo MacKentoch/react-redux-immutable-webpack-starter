@@ -1,7 +1,6 @@
 import {expect}             from 'chai';
 import views                from '../../../src/app/redux/modules/views';
 import moment               from 'moment';
-import { fromJS, toJS }     from 'immutable';
 
 const dateFormat = 'DD/MM/YYYY HH:mm';
 
@@ -13,7 +12,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    null
     };
     /* eslint-disable no-undefined */
-    expect(toJS(views(undefined, {}))).to.deep.equal(initialState);
+    expect(views(undefined, {}).toJS()).to.deep.equal(initialState);
     /* eslint-enable no-undefined */
   });
 
@@ -31,7 +30,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    null
     };
     /* eslint-disable no-undefined */
-    expect(toJS(views(undefined, action))).to.deep.equal(expectedState);
+    expect(views(undefined, action).toJS()).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -49,7 +48,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    now
     };
     /* eslint-disable no-undefined */
-    expect(toJS(views({currentView: 'home'}, actionLeaveHome))).to.deep.equal(expectedState);
+    expect(views({currentView: 'home'}, actionLeaveHome).toJS()).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -68,7 +67,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    null
     };
     /* eslint-disable no-undefined */
-    expect(toJS(views(undefined, action))).to.deep.equal(expectedState);
+    expect(views(undefined, action).toJS()).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -86,43 +85,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    now
     };
     /* eslint-disable no-undefined */
-    expect(toJS(views({currentView: 'about'}, actionLeaveAbout))).to.deep.equal(expectedState);
-    /* eslint-enable no-undefined */
-  });
-
-  it('should set state according to ENTER_COMPONENTS_VIEW action', () => {
-    const now = moment().format(dateFormat);
-    const actionEnterComponents = {
-      type:         'ENTER_COMPONENTS_VIEW',
-      currentView:  'components',
-      enterTime:    now,
-      leaveTime:    null
-    };
-    const expectedState = {
-      currentView:  'components',
-      enterTime:    now,
-      leaveTime:    null
-    };
-    /* eslint-disable no-undefined */
-    expect(toJS(views(undefined, actionEnterComponents))).to.deep.equal(expectedState);
-    /* eslint-enable no-undefined */
-  });
-
-  it('should set state according to LEAVE_COMPONENTS_VIEW action', () => {
-    const now = moment().format(dateFormat);
-    const actionLeaveComponents = {
-      type:         'LEAVE_COMPONENTS_VIEW',
-      currentView:  'components',
-      enterTime:    null,
-      leaveTime:    now
-    };
-    const expectedState = {
-      currentView:  'components',
-      enterTime:    null,
-      leaveTime:    now
-    };
-    /* eslint-disable no-undefined */
-    expect(toJS(views({currentView: 'components'}, actionLeaveComponents))).to.deep.equal(expectedState);
+    expect(views({currentView: 'about'}, actionLeaveAbout).toJS()).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 });

@@ -5,12 +5,13 @@ import {
 }                         from 'enzyme';
 import chai, {expect}     from 'chai';
 import dirtyChai          from 'dirty-chai';
-import { NavigationBar }  from '../../../src/app/components';
-import { fromJS, toJS }   from 'immutable';
+// import { NavigationBar }  from '../../../src/app/components';
+import NavigationBar      from '../../../src/app/components/navigation/NavigationBar';
+import { fromJS }         from 'immutable';
 
 chai.use(dirtyChai);
 
-const navModel = fromJS({
+const navModelImmutable = fromJS({
   brand:      'React Redux Bootstrap Starter',
   leftLinks:  [
     {
@@ -44,9 +45,9 @@ describe('<NavigationBar />', () => {
 
   const props = {
     brand: testBrandName,
-    handleLeftNavItemClick: ()=>{},
-    handleRightNavItemClick: ()=>{},
-    navModel
+    handleLeftNavItemClick:   () => {},
+    handleRightNavItemClick:  () => {},
+    navModel: navModelImmutable
   };
 
   it('should render a NavigationBar', () => {
@@ -60,10 +61,16 @@ describe('<NavigationBar />', () => {
   });
 
   describe('child <LeftNav />', () => {
+    it('should be passed props leftLinks:of type Array', () => {
+      const wrapper = mount(<NavigationBar {...props} />);
+      const LeftNav = wrapper.find('LeftNav');
+      expect(Array.isArray(LeftNav.prop('leftLinks').toJS())).to.equal(true);
+    });
+
     it('should be passed props leftLinks:array of object with length 1', () => {
       const wrapper = shallow(<NavigationBar {...props} />);
       const LeftNav = wrapper.find('LeftNav');
-      expect(toJS(LeftNav.prop('leftLinks')).length).to.equal(1);
+      expect((LeftNav.prop('leftLinks').toJS()).length).to.equal(1);
     });
 
     it('should be passed props onLeftNavButtonClick:func', () => {
@@ -77,7 +84,7 @@ describe('<NavigationBar />', () => {
     it('should be passed props rightLinks:array of object with length 2', () => {
       const wrapper = shallow(<NavigationBar {...props} />);
       const RightNav = wrapper.find('RightNav');
-      expect(toJS(RightNav.prop('rightLinks')).length).to.equal(2);
+      expect(RightNav.prop('rightLinks').toJS().length).to.equal(2);
     });
 
     it('should be passed props onRightNavButtonClick:func', () => {

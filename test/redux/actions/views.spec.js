@@ -5,9 +5,7 @@ import {
   enterHome,
   leaveHome,
   enterAbout,
-  leaveAbout,
-  enterComponents,
-  leaveComponents
+  leaveAbout
 }                       from '../../../src/app/redux/modules/views';
 
 const dateFormat = 'DD/MM/YYYY HH:mm';
@@ -57,25 +55,5 @@ describe('redux - action creator "views"', () => {
       leaveTime:    now
     };
     expect(leaveAbout(now)).to.deep.equal(leaveAboutACTION);
-  });
-
-  it('should return enterComponents action object', () => {
-    const enterComponentsACTION = {
-      type:         'ENTER_COMPONENTS_VIEW',
-      currentView:  'components',
-      enterTime:    now,
-      leaveTime:    null
-    };
-    expect(enterComponents(now)).to.deep.equal(enterComponentsACTION);
-  });
-
-  it('should return leaveAbout action object', () => {
-    const leaveComponentsACTION = {
-      type:         'LEAVE_COMPONENTS_VIEW',
-      currentView:  'components',
-      enterTime:    null,
-      leaveTime:    now
-    };
-    expect(leaveComponents(now)).to.deep.equal(leaveComponentsACTION);
   });
 });

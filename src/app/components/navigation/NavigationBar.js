@@ -20,9 +20,7 @@ class NavigationBar extends PureComponent {
       <nav className="navbar navbar-default">
         <div className="containersCustom">
           <div className="navbar-header">
-            {
-              <Humburger />
-            }
+            <Humburger />
             <a className="navbar-brand">
               {brand}
             </a>
@@ -31,20 +29,16 @@ class NavigationBar extends PureComponent {
             className="collapse navbar-collapse"
             id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              {
-                <LeftNav
-                  leftLinks={navModel.get('leftLinks')}
-                  onLeftNavButtonClick={handleLeftNavItemClick}
-                />
-              }
+              <LeftNav
+                leftLinks={navModel.get('leftLinks')}
+                onLeftNavButtonClick={handleLeftNavItemClick}
+              />
             </ul>
             <ul className="nav navbar-nav navbar-right">
-              {
-                <RightNav
-                  rightLinks={navModel.get('rightLinks')}
-                  onRightNavButtonClick={handleRightNavItemClick}
-                />
-              }
+              <RightNav
+                rightLinks={navModel.get('rightLinks')}
+                onRightNavButtonClick={handleRightNavItemClick}
+              />
             </ul>
           </div>
         </div>

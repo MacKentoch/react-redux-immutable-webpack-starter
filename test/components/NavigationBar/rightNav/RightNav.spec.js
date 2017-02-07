@@ -5,7 +5,7 @@ import {
 import chai, {expect}     from 'chai';
 import dirtyChai          from 'dirty-chai';
 import RightNav           from '../../../../src/app/components/navigation/rightNav/RightNav';
-import { fromJS, toJS }   from 'immutable';
+import { fromJS }         from 'immutable';
 
 chai.use(dirtyChai);
 
