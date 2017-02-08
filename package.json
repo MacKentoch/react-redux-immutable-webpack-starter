@@ -31,10 +31,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter.git"
+    "url": "git+https://github.com/MacKentoch/react-redux-immutable-webpack-starter"
   },
   "bugs": {
-    "url": "https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter/issues"
+    "url": "https://github.com/MacKentoch/react-redux-immutable-webpack-starter/issues"
   },
   "author": "Erwan DATIN (MacKentoch)",
   "license": "MIT",

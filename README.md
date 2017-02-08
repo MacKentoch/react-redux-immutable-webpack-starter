@@ -1,7 +1,6 @@
 Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux-devtools STARTER
 ==========
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter)
-
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter) [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/MacKentoch/react-redux-immutable-webpack-starter) [![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-redux-immutable-webpack-starter/badge.svg)](https://coveralls.io/github/MacKentoch/react-redux-immutable-webpack-starter)
 
 > My React + Redux + Immutable + React-Router + Bootstrap + webpack project starter.
 
