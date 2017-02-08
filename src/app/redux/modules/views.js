@@ -27,7 +27,7 @@ export default function (state = initialState, action) {
   case ENTER_HOME_VIEW:
   case ENTER_ABOUT_VIEW:
     // can't enter if you are already inside
-    if (state.currentView !== action.currentView) {
+    if (state.get('currentView') !== action.currentView) {
       return state.merge({
         currentView:  action.currentView,
         enterTime:    action.enterTime,
@@ -39,7 +39,7 @@ export default function (state = initialState, action) {
   case LEAVE_HOME_VIEW:
   case LEAVE_ABOUT_VIEW:
     // can't leave if you aren't already inside
-    if (state.currentView === action.currentView) {
+    if (state.get('currentView') === action.currentView) {
       return state.merge({
         currentView:  action.currentView,
         enterTime:    action.enterTime,

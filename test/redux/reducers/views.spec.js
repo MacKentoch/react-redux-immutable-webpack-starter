@@ -1,6 +1,7 @@
 import {expect}             from 'chai';
 import views                from '../../../src/app/redux/modules/views';
 import moment               from 'moment';
+import { fromJS }           from 'immutable';
 
 const dateFormat = 'DD/MM/YYYY HH:mm';
 
@@ -48,7 +49,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    now
     };
     /* eslint-disable no-undefined */
-    expect(views({currentView: 'home'}, actionLeaveHome).toJS()).to.deep.equal(expectedState);
+    expect(views(fromJS({currentView: 'home'}), actionLeaveHome).toJS()).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 
@@ -85,7 +86,7 @@ describe('redux - reducer "views"', () => {
       leaveTime:    now
     };
     /* eslint-disable no-undefined */
-    expect(views({currentView: 'about'}, actionLeaveAbout).toJS()).to.deep.equal(expectedState);
+    expect(views(fromJS({currentView: 'about'}), actionLeaveAbout).toJS()).to.deep.equal(expectedState);
     /* eslint-enable no-undefined */
   });
 });
