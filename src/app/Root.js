@@ -5,12 +5,9 @@ import React, {
 }                               from 'react';
 import {
   Router,
-
   hashHistory         // <- when no server
   // browserHistory,  // <- when server
-  
   // useRouterHistory
-
 }                               from 'react-router';
 import { Provider }             from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';

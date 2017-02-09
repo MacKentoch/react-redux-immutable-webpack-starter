@@ -1,11 +1,11 @@
 /* eslint no-console:0 */
 /* eslint consistent-return:0 */
-const path          = require('path');
-const webpack       = require('webpack');
-const express       = require('express');
-const devMiddleware = require('webpack-dev-middleware');
-const hotMiddleware = require('webpack-hot-middleware');
-const config        = require('./webpack.hot.reload.config');
+const path               = require('path');
+const webpack            = require('webpack');
+const express            = require('express');
+const devMiddleware      = require('webpack-dev-middleware');
+const hotMiddleware      = require('webpack-hot-middleware');
+const config             = require('./webpack.hot.reload.config');
 
 const app       = express();
 const compiler  = webpack(config);

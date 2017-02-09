@@ -5,9 +5,10 @@ Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Rel
 > My React + Redux + Immutable + React-Router + Bootstrap + webpack project starter.
 
 - *webpack is as simple as possible*
-- *ReactJS + Redux + React Router all immutable (all component extend PureComponent).*
+- *ReactJS + Redux + React Router all immutable (all components extend PureComponent).*
 - *`pure front-end` = server independant (use whatever you want as server: NodeJS, Rails, .NET...)*
 
+[Preview of this starter](https://mackentoch.github.io/react-redux-immutable-webpack-starter/#/)
 
 ## Detailed Content
 
