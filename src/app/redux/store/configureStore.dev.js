@@ -15,8 +15,9 @@ import DevTools                 from '../devTools/DevTools.jsx';
 
 
 const loggerMiddleware = createLogger({
-  level     : 'info',
-  collapsed : true
+  level:     'info',
+  collapsed: true,
+  stateTransformer: state => state.toJS()
 });
 
 // createStore : enhancer
