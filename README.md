@@ -18,7 +18,7 @@ Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Rel
 - React-Redux (*Redux is not specific to ReactJS, you could easily use it with Angular2 for instance*)
 - Immutable JS
 - redux-immutable
-- Redux-devtools (*want to time travel your application State?*)
+- redux-devtools-extension ([github :link:](https://github.com/zalmoxisus/redux-devtools-extension#redux-devtools-extension))
 - React-Router-Redux (*previously named react-simple-router*)
 - react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))

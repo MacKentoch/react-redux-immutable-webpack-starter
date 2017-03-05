@@ -12,7 +12,6 @@ import {
 import { Provider }             from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore           from './redux/store/configureStore';
-import DevTools                 from './redux/devTools/DevTools.jsx';
 // import { createHistory }        from 'history';
 
 // specified base url:
@@ -37,7 +36,6 @@ class Root extends Component {
           <Router history={syncedHistory}>
             {routes()}
           </Router>
-          { process.env.NODE_ENV !== 'production' ? <DevTools /> : null }
         </div>
       </Provider>
     );

@@ -1,18 +1,12 @@
 import {
   createStore,
   compose,
-  // combineReducers,
   applyMiddleware
 }                               from 'redux';
-// import { routerReducer }        from 'react-router-redux';
-import routerReducer            from './immutableRouteReducer';
-import { combineReducers }      from 'redux-immutable';
-import { persistState }         from 'redux-devtools';
+
 import createLogger             from 'redux-logger';
 import thunkMiddleware          from 'redux-thunk';
-import * as reducers            from '../modules/reducers';
-import DevTools                 from '../devTools/DevTools.jsx';
-
+import reducer                  from '../modules/reducers';
 
 const loggerMiddleware = createLogger({
   level:     'info',
@@ -21,22 +15,18 @@ const loggerMiddleware = createLogger({
 });
 
 // createStore : enhancer
-const enhancer = compose(
-  applyMiddleware(thunkMiddleware, loggerMiddleware), // logger after thunk to avoid undefined actions
-  persistState(getDebugSessionKey()),
-  DevTools.instrument()
+// NOTE: if redux devtools extension is not installed, we just keep using Redux compose
+const composeEnhancers =  typeof window === 'object' &&  // for universal ("isomorphic") apps
+                          window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+                          ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+                            // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+                            // see: https://github.com/zalmoxisus/redux-devtools-extension/blob/master/docs/API/Arguments.md
+                          })
+                          : compose;
+
+const enhancer = composeEnhancers(
+  applyMiddleware(thunkMiddleware, loggerMiddleware) // logger after thunk to avoid undefined actions
 );
-
-function getDebugSessionKey() {
-  const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
-  return (matches && matches.length > 0)? matches[1] : null;
-}
-
-// combine reducers -> createStore reducer
-const reducer = combineReducers({
-  ...reducers,
-  routing: routerReducer
-});
 
 export default function configureStore(initialState) {
   const store = createStore(reducer, initialState, enhancer);

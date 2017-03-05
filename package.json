@@ -1,6 +1,6 @@
 {
   "name": "react-redux-immutable-webpack-starter",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "react js + redux + react router + immutable + hot reload + devTools + bootstrap + webpack starter",
   "main": "src/index.js",
   "scripts": {
@@ -67,7 +67,6 @@
     "postcss-loader": "^1.1.1",
     "precss": "^1.4.0",
     "react-addons-test-utils": "^15.4.1",
-    "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.1.1",
     "redux-logger": "^2.7.4",
