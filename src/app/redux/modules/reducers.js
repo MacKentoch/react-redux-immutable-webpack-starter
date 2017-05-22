@@ -1,3 +1,5 @@
+// @flow weak
+
 import { combineReducers }  from 'redux-immutable';
 import routerReducer        from './immutableRoute';
 import views                from './views';

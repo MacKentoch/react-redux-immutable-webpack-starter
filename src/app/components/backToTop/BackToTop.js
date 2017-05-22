@@ -1,3 +1,4 @@
+// @flow weak
 /* global $:true */
 
 import React, {
@@ -9,6 +10,15 @@ import BackToTopButton  from './backToTopButton/BackToTopButton';
 import {Motion, spring, presets} from 'react-motion';
 
 class BackToTop extends Component {
+  static propTypes = {
+    minScrollY:   PropTypes.number,
+    scrollTo:     PropTypes.string.isRequired,
+    onScrollDone: PropTypes.func
+  };
+
+  static defaultProps = {
+    minScrollY: 120
+  };
 
   state = {
     windowScrollY: 0,
@@ -80,15 +90,5 @@ class BackToTop extends Component {
     }
   }
 }
-
-BackToTop.propTypes = {
-  minScrollY: PropTypes.number,
-  scrollTo: PropTypes.string.isRequired,
-  onScrollDone: PropTypes.func
-};
-
-BackToTop.defaultProps = {
-  minScrollY: 120
-};
 
 export default BackToTop;

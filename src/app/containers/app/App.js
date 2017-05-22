@@ -1,3 +1,5 @@
+// @flow weak
+
 import React, {
   PureComponent,
   PropTypes
@@ -13,6 +15,16 @@ import * as viewsActions      from '../../redux/modules/views';
 import { fromJS }             from 'immutable';
 
 class App extends PureComponent {
+  static propTypes = {
+    // react router
+    children:   PropTypes.node,
+    history:    PropTypes.object,
+    location:   PropTypes.object,
+    actions:    PropTypes.object,
+    // views:
+    currentView: PropTypes.string
+  };
+
   state = {
     navModel : fromJS(navigationModel)
   };
@@ -47,17 +59,6 @@ class App extends PureComponent {
     // something to do here?
   }
 }
-
-// statics :
-App.propTypes = {
-  // react router
-  children:   PropTypes.node,
-  history:    PropTypes.object,
-  location:   PropTypes.object,
-  actions:    PropTypes.object,
-  // views:
-  currentView: PropTypes.string
-};
 
 const mapStateToProps = (state) => {
   return {

@@ -1,3 +1,4 @@
+// @flow weak
 
 export const smoothScroll = {
   timer: null,

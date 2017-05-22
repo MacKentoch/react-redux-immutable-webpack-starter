@@ -1,3 +1,5 @@
+// @flow weak
+
 import moment     from 'moment';
 import { fromJS } from 'immutable';
 

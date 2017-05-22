@@ -1,3 +1,5 @@
+// @flow weak
+
 import { Base64 }  from 'js-base64';
 
 /*
@@ -13,18 +15,23 @@ export const getLocationOrigin = () => {
 /*
   query options:
  */
-export const defaultOptions = {
-  credentials: 'same-origin'
+export const getMethod = {
+  method: 'get'
 };
 
 export const postMethod = {
-  method: 'POST'
+  method: 'post'
+};
+
+export const defaultOptions = {
+  credentials: 'same-origin'
 };
 
 export const jsonHeader = {
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
+    // 'Access-control-Allow-Origin': '*'
   }
 };
 

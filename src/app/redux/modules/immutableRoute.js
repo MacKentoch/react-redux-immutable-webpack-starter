@@ -1,3 +1,5 @@
+// @flow weak
+
 import { fromJS } from 'immutable';
 
 // this constant comes from react-redux-router (we are just overriding the reducer)

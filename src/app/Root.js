@@ -1,3 +1,5 @@
+// @flow weak
+
 /* eslint-disable no-process-env */
 import React, {
   PropTypes,
@@ -21,12 +23,15 @@ import configureStore           from './redux/store/configureStore';
 
 const store         = configureStore();
 
-const syncedHistory = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState(state) {
-    return state.get('routing').toJS();
+const syncedHistory = syncHistoryWithStore(
+  browserHistory,
+  store,
+  {
+    selectLocationState(state) {
+      return state.get('routing').toJS();
+    }
   }
-});
-
+);
 
 class Root extends Component {
   render() {

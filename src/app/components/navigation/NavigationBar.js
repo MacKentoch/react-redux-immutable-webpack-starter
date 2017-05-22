@@ -1,3 +1,5 @@
+// @flow weak
+
 import React, {
   PureComponent,
   PropTypes
@@ -5,9 +7,36 @@ import React, {
 import Humburger          from './humburger/Humburger';
 import LeftNav            from './leftNav/LeftNav';
 import RightNav           from './rightNav/RightNav';
-import Immutable          from 'immutable';
+import * as Immutable     from 'immutable';
 
 class NavigationBar extends PureComponent {
+  static propTypes = {
+    brand:                    PropTypes.string,
+    handleLeftNavItemClick:   PropTypes.func,
+    handleRightNavItemClick:  PropTypes.func,
+
+    navModel: PropTypes.instanceOf(Immutable.Map)
+    // not immutable version of navModel would be described like:
+    // navModel:  PropTypes.shape({
+    //   leftLinks:  PropTypes.arrayOf(
+    //     PropTypes.shape({
+    //       label: PropTypes.string.isRequired,
+    //       link : PropTypes.string.isRequired
+    //     })
+    //   ).isRequired,
+    //   rightLinks:  PropTypes.arrayOf(
+    //     PropTypes.shape({
+    //       label: PropTypes.string.isRequired,
+    //       link : PropTypes.string.isRequired
+    //     })
+    //   ).isRequired
+    // })
+  };
+
+  static defaultProps  = {
+    brand  : 'brand'
+  };
+
   render() {
     const {
       brand,
@@ -46,33 +75,5 @@ class NavigationBar extends PureComponent {
     );
   }
 }
-
-
-NavigationBar.propTypes = {
-  brand:                    PropTypes.string,
-  handleLeftNavItemClick:   PropTypes.func,
-  handleRightNavItemClick:  PropTypes.func,
-
-  navModel: PropTypes.instanceOf(Immutable.Map)
-  // not immutable version of navModel would be described like:
-  // navModel:  PropTypes.shape({
-  //   leftLinks:  PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       label: PropTypes.string.isRequired,
-  //       link : PropTypes.string.isRequired
-  //     })
-  //   ).isRequired,
-  //   rightLinks:  PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       label: PropTypes.string.isRequired,
-  //       link : PropTypes.string.isRequired
-  //     })
-  //   ).isRequired
-  // })
-};
-
-NavigationBar.defaultProps  = {
-  brand  : 'brand'
-};
 
 export default NavigationBar;

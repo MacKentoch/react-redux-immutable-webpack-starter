@@ -1,12 +1,19 @@
+// @flow weak
+
 import React, {
   PureComponent,
   PropTypes
 }                           from 'react';
 import LeftNavButton        from './leftNavButton/LeftNavButton';
-import Immutable            from 'immutable';
+import * as Immutable       from 'immutable';
 
 
 class LeftNav extends PureComponent {
+  static propTypes = {
+    leftLinks: PropTypes.instanceOf(Immutable.List),
+    onLeftNavButtonClick: PropTypes.func
+  };
+
   render() {
     const { leftLinks, onLeftNavButtonClick } = this.props;
     return (
@@ -30,10 +37,5 @@ class LeftNav extends PureComponent {
     );
   }
 }
-
-LeftNav.propTypes = {
-  leftLinks: PropTypes.instanceOf(Immutable.List),
-  onLeftNavButtonClick: PropTypes.func
-};
 
 export default LeftNav;

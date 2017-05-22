@@ -1,3 +1,5 @@
+// @flow weak
+
 import {
   createStore,
   applyMiddleware,
@@ -5,10 +7,14 @@ import {
 }                           from 'redux';
 import thunkMiddleware      from 'redux-thunk';
 import reducer              from '../modules/reducers';
+import fetchMiddleware      from '../middleware/fetchMiddleware';
 
 // createStore : enhancer
 const enhancer = compose(
-  applyMiddleware(thunkMiddleware)
+  applyMiddleware(
+    thunkMiddleware,
+    fetchMiddleware
+  )
 );
 
 export default function configureStore(initialState) {

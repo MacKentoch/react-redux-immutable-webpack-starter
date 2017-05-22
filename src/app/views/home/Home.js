@@ -1,3 +1,5 @@
+// @flow weak
+
 import React, {
   PureComponent,
   PropTypes
@@ -9,6 +11,11 @@ import {
 import { Link }       from 'react-router';
 
 class Home extends PureComponent {
+  static propTypes= {
+    currentView:  PropTypes.string.isRequired,
+    enterHome:    PropTypes.func.isRequired,
+    leaveHome:    PropTypes.func.isRequired
+  };
 
   componentDidMount() {
     const { enterHome } = this.props;
@@ -50,11 +57,5 @@ class Home extends PureComponent {
     );
   }
 }
-
-Home.propTypes= {
-  currentView:  PropTypes.string.isRequired,
-  enterHome:    PropTypes.func.isRequired,
-  leaveHome:    PropTypes.func.isRequired
-};
 
 export default Home;

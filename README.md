@@ -29,11 +29,12 @@ Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Rel
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
 - Webpack ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
-- whatwg-fetch (*Why: because it is a fetch `Web API` polyfill*)
+- axios ([github :link:](https://github.com/mzabriskie/axios))
 
 **Tool chain:**
 - babel 6+
 - eslint
+- webpack 1.x
 - hot reload
 - loaders
   - `js` / `jsx`
@@ -66,15 +67,6 @@ npm install
 npm run dev
 ```
 
-*Windows - particular - case:*
-```bash
-npm run dev-win
-```
-
-##### Note : redux-devtools shortcuts
-- `ctrl+h`: to toggle devtools panel
-- `ctrl+q`: to change devtools panel position (*by default: on the right*)
-
 ### dev : hot reload mode (*+ redux-devtools*)
 
 *General case:*
@@ -83,25 +75,11 @@ npm run dev-win
 npm run start
 ```
 
-*Windows - particular - case:*
-```bash
-npm run start-win
-```
-
-##### Note : redux-devtools shortcuts
-- `ctrl+h`: to toggle devtools panel
-- `ctrl+q`: to change devtools panel position (*by default: on the right*)
-
 ### tests
 
 *General case:*
 ```bash
 npm run test
-```
-
-*Windows - particular - case:*
-```bash
-npm run test-win
 ```
 
 ### bundle production mode
@@ -111,9 +89,17 @@ npm run test-win
 npm run prod
 ```
 
-*Windows - particular - case:*
+### serve bundles (for dev or prod bundles)
+With server hot reload (*nodemon*):
+*General case:*
 ```bash
-npm run prod-win
+npm run serve-dev
+```
+
+Without server hot reload:
+*General case:*
+```bash
+npm run serve-prod
 ```
 
 ## License

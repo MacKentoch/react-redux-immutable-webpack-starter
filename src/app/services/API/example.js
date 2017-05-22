@@ -1,15 +1,26 @@
+// @flow weak
+
 import axios          from 'axios';
 import {
+  getMethod,
+  jsonHeader,
   defaultOptions,
   getLocationOrigin
 }                     from './fetchTools';
 
-export const getSomething = () => {
-  const url = `${getLocationOrigin()}/api/getSomething`;
+export const getSomething = (endpoint = 'api/getSomethingByDefault') => {
+  const method  = getMethod.method;
+  const headers = jsonHeader;
+  const url     = `${getLocationOrigin()}/${endpoint}`;
   const options = {...defaultOptions};
 
-  return axios
-        .get(url, options)
-        .then(data => data)
-        .catch(error => error);
+  return axios.request({
+    method,
+    url,
+    withCredentials: true,
+    ...headers,
+    ...options
+  })
+  .then(data => data)
+  .catch(error => Promise.reject(error));
 };
