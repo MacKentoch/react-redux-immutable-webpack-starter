@@ -1,9 +1,9 @@
 // @flow weak
 
 import React, {
-  PureComponent,
-  PropTypes
+  PureComponent
 }                           from 'react';
+import PropTypes            from 'prop-types';
 import LeftNavButton        from './leftNavButton/LeftNavButton';
 import * as Immutable       from 'immutable';
 

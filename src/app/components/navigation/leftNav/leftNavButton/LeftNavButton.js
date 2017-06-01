@@ -1,10 +1,10 @@
 // @flow weak
 
 import React, {
-  PureComponent,
-  PropTypes
+  PureComponent
 }                     from 'react';
-import { Link }       from 'react-router';
+import PropTypes      from 'prop-types';
+import { Link }       from 'react-router-dom';
 
 class LeftNavButton extends PureComponent {
   static propTypes = {

@@ -2,29 +2,21 @@
 
 /* eslint-disable no-process-env */
 import React, {
-  PropTypes,
   Component
 }                               from 'react';
 import {
-  Router,
-  // hashHistory
-  browserHistory
-  // useRouterHistory
-}                               from 'react-router';
+  BrowserRouter as Router
+}                               from 'react-router-dom';
 import { Provider }             from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore           from './redux/store/configureStore';
-// import { createHistory }        from 'history';
+import { createBrowserHistory } from 'history';
+import App                      from './containers/app/App';
 
-// specified base url:
-// const browserHistory  = useRouterHistory(createHistory)({
-//   basename: '/app'
-// });
-
+const history       = createBrowserHistory();
 const store         = configureStore();
-
 const syncedHistory = syncHistoryWithStore(
-  browserHistory,
+  history,
   store,
   {
     selectLocationState(state) {
@@ -35,21 +27,16 @@ const syncedHistory = syncHistoryWithStore(
 
 class Root extends Component {
   render() {
-    const { routes } = this.props;
     return (
       <Provider store={store}>
         <div>
           <Router history={syncedHistory}>
-            {routes()}
+            <App />
           </Router>
         </div>
       </Provider>
     );
   }
 }
-
-Root.propTypes = {
-  routes: PropTypes.any
-};
 
 export default Root;

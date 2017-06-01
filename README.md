@@ -1,4 +1,4 @@
-Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux-devtools STARTER
+React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux-devtools STARTER
 ==========
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter) [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/MacKentoch/react-redux-immutable-webpack-starter) [![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-redux-immutable-webpack-starter/badge.svg)](https://coveralls.io/github/MacKentoch/react-redux-immutable-webpack-starter)
 
@@ -20,14 +20,14 @@ Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Rel
 - redux-immutable
 - redux-devtools-extension ([github :link:](https://github.com/zalmoxisus/redux-devtools-extension#redux-devtools-extension))
 - React-Router-Redux (*previously named react-simple-router*)
-- react-router (3.x- [github :link:](https://github.com/reactjs/react-router))
+- react-router (4.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
 - font-awesome ([github :link:](https://github.com/FortAwesome/Font-Awesome))
 - animate.css ([github :link:](https://github.com/daneden/animate.css))
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
-- Webpack ([github :link:](https://github.com/webpack/webpack))
+- Webpack 2.x ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
 - axios ([github :link:](https://github.com/mzabriskie/axios))
 
@@ -43,7 +43,7 @@ Full ES2015+ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Rel
   - json
   - images formats
   - svg and fonts formats
-- autoprefixer (css and sass)
+- postcss
 
 **tests:**
 - Mocha
