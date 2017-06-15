@@ -34,7 +34,7 @@ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux
 **Tool chain:**
 - babel 6+
 - eslint
-- webpack 1.x
+- webpack 2.x
 - hot reload
 - loaders
   - `js` / `jsx`
