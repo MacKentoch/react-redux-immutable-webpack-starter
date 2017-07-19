@@ -3,6 +3,8 @@ node_modules/
 .idea/
 *.log
 
+package-lock.json
+
 build/
 dist/
 public/assets/
