@@ -3,26 +3,28 @@
 import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as viewsActions      from '../../redux/modules/views';
-import { Home }               from '../../views';
+import Protected              from './Protected';
 
 
 const mapStateToProps = (state) => {
   return {
-    currentView: state.getIn(['views', 'currentView'])
+    // views
+    currentView:  state.getIn(['views', 'currentView'])
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
     {
-      enterHome: viewsActions.enterHome,
-      leaveHome: viewsActions.leaveHome
+      // views
+      enterProtected: viewsActions.enterProtected,
+      leaveProtected: viewsActions.leaveProtected
     },
     dispatch
   );
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+    mapStateToProps,
+    mapDispatchToProps
+  )(Protected);

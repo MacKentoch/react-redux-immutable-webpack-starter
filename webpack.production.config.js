@@ -14,7 +14,10 @@ const SPLIT_STYLE = true;
 
 const config = {
   entry: {
-    app:    indexFile,
+    app: [
+      'babel-polyfill',
+      indexFile
+    ],
     vendor: [
       'react',
       'react-dom',
@@ -53,7 +56,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        use:  SPLIT_STYLE 
+        use:  SPLIT_STYLE
           ? ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
@@ -69,7 +72,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use:  SPLIT_STYLE 
+        use:  SPLIT_STYLE
         ? ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -105,9 +108,8 @@ const config = {
     new ExtractTextPlugin('app.styles.css'),
     new webpack.optimize.CommonsChunkPlugin({
       name:     'vendor',
-      filename: 'app.vendor.bundle.js' 
-    }),
-    uglify()
+      filename: 'app.vendor.bundle.js'
+    })
   ]
 };
 /*
@@ -115,8 +117,9 @@ const config = {
 */
 function getImplicitGlobals() {
   return new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery'
+    $:      'jquery',
+    jQuery: 'jquery',
+    jquery: 'jquery'
   });
 }
 
@@ -124,30 +127,6 @@ function setNodeEnv() {
   return new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')
-    }
-  });
-}
-
-function uglify() {
-  return new webpack.optimize.UglifyJsPlugin({
-    // Don't beautify output (enable for neater output)
-    beautify: false,
-    // Eliminate comments
-    comments: true,
-    // Compression specific options
-    compress: {
-      warnings: false,
-      // Drop `console` statements
-      'drop_console': true
-    },
-    // Mangling specific options
-    mangle: {
-      // Don't mangle $
-      except: ['$'],
-      // Don't care about IE8
-      'screw_ie8': true,
-      // Don't mangle function names
-      'keep_fnames': false
     }
   });
 }

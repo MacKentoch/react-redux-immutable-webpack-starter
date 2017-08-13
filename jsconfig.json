@@ -1,0 +1,12 @@
+{
+  "typeAcquisition": {
+    "include": [
+      "react",
+      "redux",
+      "react-router",
+      "immutable",
+      "moment",
+      "axios"
+    ]
+  }
+}

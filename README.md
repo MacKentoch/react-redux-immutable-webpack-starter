@@ -1,4 +1,4 @@
-React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux-devtools STARTER
+React + React-Router 4 + Redux + ImmutableJS + Bootstrap + webpack 3 with Hot Reload and redux-devtools-extension STARTER
 ==========
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter) [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/MacKentoch/react-redux-immutable-webpack-starter) [![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-redux-immutable-webpack-starter/badge.svg)](https://coveralls.io/github/MacKentoch/react-redux-immutable-webpack-starter)
 
@@ -7,13 +7,13 @@ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux
 - *webpack is as simple as possible*
 - *ReactJS + Redux + React Router all immutable (all components extend PureComponent).*
 - *`pure front-end` = server independant (use whatever you want as server: NodeJS, Rails, .NET...)*
-
+![preview](./preview/preview.png)
 [Preview of this starter](https://mackentoch.github.io/react-redux-immutable-webpack-starter/#/)
 
 ## Detailed Content
 
 **Front:**
-- React JS (15.x - [github :link:](https://github.com/facebook/react))
+- React JS (15.6.x - [github :link:](https://github.com/facebook/react))
 - Redux (*as you application grows managing state will be a serious concern, save pain with Redux*)
 - React-Redux (*Redux is not specific to ReactJS, you could easily use it with Angular2 for instance*)
 - Immutable JS
@@ -27,14 +27,14 @@ React + React-Router + Redux + ImmutableJS + Bootstrap with Hot Reload and redux
 - animate.css ([github :link:](https://github.com/daneden/animate.css))
 - classnames ([github :link:](https://github.com/JedWatson/classnames))
 - react-motion ([github :link:](https://github.com/chenglou/react-motion))
-- Webpack 2.x ([github :link:](https://github.com/webpack/webpack))
+- Webpack 3.x ([github :link:](https://github.com/webpack/webpack))
 - babel 6+ ([github :link:](https://github.com/babel/babel))
 - axios ([github :link:](https://github.com/mzabriskie/axios))
 
 **Tool chain:**
 - babel 6+
 - eslint
-- webpack 2.x
+- webpack 3.x
 - hot reload
 - loaders
   - `js` / `jsx`
@@ -62,14 +62,12 @@ npm install
 ```
 ### bundle dev mode (*+ redux-devtools*)
 
-*General case:*
 ```bash
 npm run dev
 ```
 
 ### dev : hot reload mode (*+ redux-devtools*)
 
-*General case:*
 
 ```bash
 npm run start
@@ -77,7 +75,6 @@ npm run start
 
 ### tests
 
-*General case:*
 ```bash
 npm run test
 ```
@@ -91,13 +88,11 @@ npm run prod
 
 ### serve bundles (for dev or prod bundles)
 With server hot reload (*nodemon*):
-*General case:*
 ```bash
 npm run serve-dev
 ```
 
 Without server hot reload:
-*General case:*
 ```bash
 npm run serve-prod
 ```

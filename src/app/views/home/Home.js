@@ -41,7 +41,7 @@ class Home extends PureComponent {
             and React Router v4
           </h2>
           <h2>
-            and webpack 2.x
+            and webpack 3.x
           </h2>
           <h1>
             Starter
