@@ -2,6 +2,10 @@ React + React-Router 4 + Redux + ImmutableJS + Bootstrap + webpack 3 with Hot Re
 ==========
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/MacKentoch/react-redux-bootstrap-webpack-starter) [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)](https://github.com/MacKentoch/react-redux-immutable-webpack-starter) [![Coverage Status](https://coveralls.io/repos/github/MacKentoch/react-redux-immutable-webpack-starter/badge.svg)](https://coveralls.io/github/MacKentoch/react-redux-immutable-webpack-starter)
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-redux-immutable-webpack-starter'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Mp96tCWH2KdajZuBzqB6jwj8/MacKentoch/react-redux-immutable-webpack-starter.svg' />
+</a>
+
 > My React + Redux + Immutable + React-Router + Bootstrap + webpack project starter.
 
 - *webpack is as simple as possible*
